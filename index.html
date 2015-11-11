@@ -22,7 +22,12 @@ dl, dt, dd {
   border-radius: 4px;
 }
  
-.faqs dd {
+ /* no JS display */
+ .faqs dd {
+  display: block;
+}
+ 
+.javascript .faqs dd {
   display: none;
 }
  
@@ -62,6 +67,7 @@ dl, dt, dd {
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
   jQuery(document).ready(function($) {
+    $('body').addClass('javascript');
     $('.faqs dd').hide(); // Hide all DDs inside .faqs
     $('.faqs dt').hover(function(){$(this).addClass('hover')},function(){$(this).removeClass('hover')}).click(function(){
         // Add class "hover" on dt when hover
